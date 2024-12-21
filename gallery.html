@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Timeless Memories</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Add Lightbox CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <span class="brand-first">Timeless</span>
+          <span class="brand-second">Memories</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link book-now-btn">Book Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <h1 class="section-title">Our Gallery</h1>
+        <p class="lead text-center">
+          Explore our collection of timeless moments captured through our lens
+        </p>
+      </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-main-section">
+      <div class="container">
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">
+            <span>All Works</span>
+          </button>
+          <button class="filter-btn" data-filter="wedding">
+            <span>Wedding</span>
+          </button>
+          <button class="filter-btn" data-filter="portrait">
+            <span>Portrait</span>
+          </button>
+          <button class="filter-btn" data-filter="event">
+            <span>Events</span>
+          </button>
+          <button class="filter-btn" data-filter="fashion">
+            <span>Fashion</span>
+          </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <!-- Wedding Photos -->
+          <div class="gallery-item" data-category="wedding">
+            <a
+              href="images/gallery/wedding1.jpg"
+              data-lightbox="gallery"
+              data-title="Wedding Photography"
+            >
+              <img src="images/gallery/wedding1.jpg" alt="Wedding Photo" />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <span class="gallery-category">Wedding</span>
+                  <h3>Beautiful Ceremony</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Add more gallery items following the same pattern -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <h5 class="mb-4">Timeless Memories</h5>
+            <p class="mb-4">
+              Professional Photography Services capturing your precious moments
+              with elegance and style.
+            </p>
+            <div class="social-links">
+              <a href="#" class="text-white me-3"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="footer-links list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="experience.html">Experience</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="mb-4">Our Services</h5>
+            <ul class="footer-links list-unstyled">
+              <li><a href="#">Wedding Photography</a></li>
+              <li><a href="#">Portrait Sessions</a></li>
+              <li><a href="#">Corporate Events</a></li>
+              <li><a href="#">Fashion Photography</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="mb-4">Contact Info</h5>
+            <ul class="footer-contact list-unstyled">
+              <li class="mb-3">
+                <i class="bi bi-geo-alt-fill me-2"></i>
+                123 Photography Street, City, Country
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-telephone-fill me-2"></i>
+                +1 234 567 890
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-envelope-fill me-2"></i>
+                info@timelessmemories.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12">
+            <hr class="footer-divider" />
+            <p class="text-center mb-0">
+              © 2024 Timeless Memories. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
