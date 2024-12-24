@@ -106,72 +106,66 @@ document.querySelectorAll('.filter-btn').forEach(button => {
     });
 });
 
-// Image Dialog Functionality
-const imageDialog = document.getElementById('imageDialog');
-const dialogImage = document.getElementById('dialogImage');
-const dialogClose = document.getElementById('dialogClose');
-const prevButton = document.getElementById('prevImage');
-const nextButton = document.getElementById('nextImage');
+// Image Dialog functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dialog = document.getElementById('imageDialog');
+    const dialogImage = document.getElementById('dialogImage');
+    const closeBtn = document.getElementById('dialogClose');
+    const prevBtn = document.getElementById('prevImage');
+    const nextBtn = document.getElementById('nextImage');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    
+    let currentIndex = 0;
+    const images = Array.from(galleryItems);
 
-let currentImageIndex = 0;
-const galleryImages = document.querySelectorAll('.gallery-item img');
-const imageSources = Array.from(galleryImages).map(img => img.src);
-
-// Open dialog
-galleryImages.forEach((img, index) => {
-    img.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentImageIndex = index;
-        showImage(currentImageIndex);
-        imageDialog.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    // Open dialog
+    galleryItems.forEach((img, index) => {
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentIndex = index;
+            openDialog(img.src);
+        });
     });
-});
 
-// Close dialog
-dialogClose.addEventListener('click', () => {
-    imageDialog.classList.remove('active');
-    document.body.style.overflow = '';
-});
+    // Close dialog
+    closeBtn.addEventListener('click', closeDialog);
+    dialog.addEventListener('click', (e) => {
+        if (e.target === dialog || e.target.classList.contains('dialog-overlay')) {
+            closeDialog();
+        }
+    });
 
-// Close on background click
-imageDialog.addEventListener('click', (e) => {
-    if (e.target === imageDialog) {
-        imageDialog.classList.remove('active');
+    // Navigation
+    prevBtn.addEventListener('click', showPrevImage);
+    nextBtn.addEventListener('click', showNextImage);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!dialog.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') closeDialog();
+        if (e.key === 'ArrowLeft') showPrevImage();
+        if (e.key === 'ArrowRight') showNextImage();
+    });
+
+    function openDialog(imageSrc) {
+        dialogImage.src = imageSrc;
+        dialog.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDialog() {
+        dialog.classList.remove('active');
         document.body.style.overflow = '';
     }
-});
 
-// Previous image
-prevButton.addEventListener('click', () => {
-    currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
-    showImage(currentImageIndex);
-});
-
-// Next image
-nextButton.addEventListener('click', () => {
-    currentImageIndex = (currentImageIndex + 1) % imageSources.length;
-    showImage(currentImageIndex);
-});
-
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (!imageDialog.classList.contains('active')) return;
-
-    if (e.key === 'Escape') {
-        imageDialog.classList.remove('active');
-        document.body.style.overflow = '';
+    function showPrevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        dialogImage.src = images[currentIndex].src;
     }
-    if (e.key === 'ArrowLeft') {
-        currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
-        showImage(currentImageIndex);
-    }
-    if (e.key === 'ArrowRight') {
-        currentImageIndex = (currentImageIndex + 1) % imageSources.length;
-        showImage(currentImageIndex);
-    }
-});
 
-function showImage(index) {
-    dialogImage.src = imageSources[index];
-} 
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        dialogImage.src = images[currentIndex].src;
+    }
+}); 
