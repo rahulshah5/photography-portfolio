@@ -339,7 +339,7 @@ body {
 /* Expertise Cards */
 .expertise-card {
     background: var(--primary-white);
-    padding: 3rem;
+    padding: 2rem;
     border: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border-radius: 12px;
@@ -350,30 +350,89 @@ body {
 .expertise-header {
     display: flex;
     align-items: center;
-    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.expertise-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--accent-dark);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1.5rem;
-}
-
-.expertise-icon i {
-    font-size: 2rem;
-    color: var(--accent-gold);
+.expertise-header .icon-circle {
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .expertise-header h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--accent-dark);
     margin: 0;
     font-weight: 600;
+}
+
+/* Improve Responsiveness */
+@media (max-width: 1200px) {
+    .expertise-card {
+        padding: 1.5rem;
+    }
+
+    .expertise-header {
+        gap: 1rem;
+    }
+
+    .expertise-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .icon-circle-lg {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 992px) {
+    .expertise-grid .row {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .specialty-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .specialty-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .specialty-item i {
+        font-size: 2rem;
+    }
+
+    .specialty-item h4 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .expertise-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .expertise-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .specialty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-info {
+        font-size: 0.9rem;
+    }
 }
 
 /* Skills Progress */
