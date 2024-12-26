@@ -565,19 +565,22 @@ body {
     position: relative;
 }
 
+/* Awards Timeline */
 .awards-timeline {
     position: relative;
     max-width: 1200px;
     margin: 4rem auto 0;
-    padding: 2rem 0;
+    padding: 0;
 }
 
 .awards-timeline::before {
     content: '';
     position: absolute;
     left: 50%;
-    top: 0;
-    bottom: 0;
+    top: 30px;
+    /* Start from first icon's center */
+    height: calc(100% - 60px);
+    /* End at last icon's center */
     width: 2px;
     background: linear-gradient(to bottom, var(--accent-gold), var(--accent-dark));
     transform: translateX(-50%);
@@ -590,6 +593,10 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s ease forwards;
+}
+
+.award-item:last-child {
+    margin-bottom: 0;
 }
 
 .award-item:nth-child(odd) {
@@ -607,6 +614,8 @@ body {
     transform: translateX(-50%);
     width: 80px;
     text-align: center;
+    background: var(--primary-white);
+    padding: 10px 0;
     z-index: 2;
 }
 
@@ -620,8 +629,7 @@ body {
     justify-content: center;
     color: var(--accent-gold);
     font-size: 1.5rem;
-    position: relative;
-    z-index: 1;
+    margin: 0 auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
@@ -632,6 +640,54 @@ body {
     font-weight: 600;
     color: var(--accent-gold);
     font-size: 1rem;
+    position: relative;
+    background: var(--primary-white);
+    padding: 0.3rem 0;
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+    .awards-timeline::before {
+        left: 30px;
+    }
+
+    .award-item {
+        padding-left: 80px !important;
+        padding-right: 0 !important;
+    }
+
+    .award-item:nth-child(even) {
+        flex-direction: row;
+    }
+
+    .award-icon {
+        left: 0;
+        transform: none;
+        width: 60px;
+    }
+
+    .award-icon i {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .award-year {
+        font-size: 0.9rem;
+    }
+
+    .award-content {
+        padding: 1.5rem;
+    }
+
+    .award-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .award-badge {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
 }
 
 .award-content {
