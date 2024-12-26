@@ -1676,3 +1676,172 @@ footer {
     height: 3px;
     background: var(--accent-gold);
 }
+
+/* Navigation Responsive Styles */
+@media (max-width: 992px) {
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.98) !important;
+        padding: 0.8rem 0;
+    }
+
+    .navbar-brand {
+        color: var(--accent-dark) !important;
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        color: var(--accent-dark) !important;
+        padding: 0.8rem 1rem !important;
+    }
+
+    .navbar-toggler {
+        padding: 0.5rem;
+        border: none;
+        color: var(--accent-dark);
+    }
+
+    .navbar-collapse {
+        background: var(--primary-white);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+    }
+
+    .book-now-btn {
+        margin: 1rem 0 0.5rem !important;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+
+    /* Hero Section Responsive */
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.2rem;
+    }
+
+    /* Portfolio Section Responsive */
+    .portfolio-item {
+        height: 350px;
+    }
+
+    .overlay-content h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Counter Section Responsive */
+    .counter-number {
+        font-size: 2.8rem;
+    }
+
+    .counter-label {
+        font-size: 1rem;
+    }
+
+    /* Awards Section Responsive */
+    .award-content {
+        padding: 1.5rem;
+    }
+
+    .award-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.6rem 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        min-height: 500px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+
+    /* Portfolio Section */
+    .portfolio-item {
+        height: 300px;
+    }
+
+    .overlay-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .overlay-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Counter Section */
+    .counter-item {
+        padding: 2rem 1.5rem;
+    }
+
+    .counter-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .counter-icon i {
+        font-size: 2rem;
+    }
+
+    .counter-number {
+        font-size: 2.5rem;
+    }
+
+    /* Section Spacing */
+    .section-spacing {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+/* Container padding adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Fix for mobile menu scrolling */
+.navbar-collapse.show {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+/* Smooth transition for mobile menu */
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
